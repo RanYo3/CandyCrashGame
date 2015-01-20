@@ -12,6 +12,9 @@ public:
 	Color(const Color &other);
 	const Color &operator=(const Color &other);
 
+	bool operator==(const Color &other) const;
+	bool operator!=(const Color &other) const;
+
 	void SetRGB(char r, char g, char b);
 
 private:

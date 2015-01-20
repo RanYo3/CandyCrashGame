@@ -34,6 +34,18 @@ const Color &Color::operator=(const Color &other)
 	return *this;
 }
 
+bool Color::operator==(const Color &other) const
+{
+	return (m_R == other.m_R) &&
+		   (m_G == other.m_G) &&
+		   (m_B == other.m_B);
+}
+
+bool Color::operator!=(const Color &other) const
+{
+	return !(*this == other);
+}
+
 void Color::SetRGB(char r, char g, char b)
 {
 	m_R = r;

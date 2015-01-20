@@ -11,6 +11,7 @@ public:
 	const Point &operator=(const Point &other);
 
 	bool operator==(const Point &other) const;
+	bool operator!=(const Point &other) const;
 
 	int GetX() const;
 	int GetY() const;

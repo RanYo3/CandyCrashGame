@@ -36,6 +36,11 @@ bool Point::operator==(const Point &other) const
 	return (m_X == other.m_X) && (m_Y == other.m_Y);
 }
 
+bool Point::operator!=(const Point &other) const
+{
+	return !(*this == other);
+}
+
 int Point::GetX() const
 {
 	return m_X;

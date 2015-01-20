@@ -1,7 +1,7 @@
 #include "Shape.h"
 
-Shape::Shape(Color color)
-	: m_TopLeft(), m_BottomRight(), m_Color(color), m_Polygon(NULL)
+Shape::Shape(ShapeType type, Color color)
+	: m_TopLeft(), m_BottomRight(), m_Type(type), m_Color(color), m_Polygon(NULL)
 {
 }
 
@@ -13,8 +13,8 @@ Shape::~Shape()
 	}
 }
 
-Shape::Shape(const Point &topLeft, const Point &bottomRight, Color color)
-	: m_TopLeft(topLeft), m_BottomRight(bottomRight), m_Color(color), m_Polygon(NULL)
+Shape::Shape(const Point &topLeft, const Point &bottomRight, ShapeType type, Color color)
+	: m_TopLeft(topLeft), m_BottomRight(bottomRight), m_Type(type), m_Color(color), m_Polygon(NULL)
 {
 }
 
@@ -22,6 +22,7 @@ Shape::Shape(const Shape &other)
 {
 	m_TopLeft = other.m_TopLeft;
 	m_BottomRight = other.m_BottomRight;
+	m_Type = other.m_Type;
 	m_Color = other.m_Color;
 	m_Polygon = NULL;
 }
@@ -32,6 +33,7 @@ const Shape &Shape::operator=(const Shape &other)
 	{
 		m_TopLeft = other.m_TopLeft;
 		m_BottomRight = other.m_BottomRight;
+		m_Type = other.m_Type;
 		m_Color = other.m_Color;
 		m_Polygon = NULL;
 	}
@@ -41,7 +43,7 @@ const Shape &Shape::operator=(const Shape &other)
 
 bool Shape::operator==(const Shape &other) const
 {
-	return (this->GetPolygonSize() == other.GetPolygonSize());
+	return (m_Type == other.m_Type) && (m_Color == other.m_Color);
 }
 
 bool Shape::operator!=(const Shape &other) const

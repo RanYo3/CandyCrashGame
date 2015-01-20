@@ -1,7 +1,7 @@
 #include "Rectangle.h"
 
 Rectangle::Rectangle()
-	: Shape()
+	: Shape(ST_Rectangle)
 {
 	InitPolygon();
 }
@@ -11,19 +11,19 @@ Rectangle::~Rectangle()
 }
 
 Rectangle::Rectangle(Color color)
-	: Shape(color)
+	: Shape(ST_Rectangle, color)
 {
 	InitPolygon();
 }
 
 Rectangle::Rectangle(const Point &topLeft, const Point &bottomRight)
-	: Shape(topLeft, bottomRight)
+	: Shape(topLeft, bottomRight, ST_Rectangle)
 {
 	InitPolygon();
 }
 
 Rectangle::Rectangle(const Point &topLeft, const Point &bottomRight, Color color)
-	: Shape(topLeft, bottomRight, color)
+	: Shape(topLeft, bottomRight, ST_Rectangle, color)
 {
 	InitPolygon();
 }
