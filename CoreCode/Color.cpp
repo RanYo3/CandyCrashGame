@@ -24,12 +24,9 @@ Color::Color(const Color &other)
 
 const Color &Color::operator=(const Color &other)
 {
-	if (&other != this)
-	{
-		m_R = other.m_R;
-		m_G = other.m_G;
-		m_B = other.m_B;
-	}
+	m_R = other.m_R;
+	m_G = other.m_G;
+	m_B = other.m_B;
 
 	return *this;
 }
