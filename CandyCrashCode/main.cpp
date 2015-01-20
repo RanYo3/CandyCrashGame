@@ -38,4 +38,6 @@ void main()
 	shapes.push_back(&Rectangle());
 	shapes.push_back(&Rectangle(WHITE));
 	TestShape(shapes);
+
+	cout << "Tests finished successfully!" << endl;
 }
