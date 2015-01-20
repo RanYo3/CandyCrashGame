@@ -1,40 +1,41 @@
-#include "Diamond.h"
+#include "stdafx.h"
+#include "Sh_Diamond.h"
 
-Diamond::Diamond()
+Sh_Diamond::Sh_Diamond()
 	: Shape(ST_Diamond)
 {
 	InitPolygon();
 }
 
-Diamond::~Diamond()
+Sh_Diamond::~Sh_Diamond()
 {
 }
 
-Diamond::Diamond(Color color)
+Sh_Diamond::Sh_Diamond(Color color)
 	: Shape(ST_Diamond, color)
 {
 	InitPolygon();
 }
 
-Diamond::Diamond(const Point &topLeft, const Point &bottomRight)
+Sh_Diamond::Sh_Diamond(const Point &topLeft, const Point &bottomRight)
 	: Shape(topLeft, bottomRight, ST_Diamond)
 {
 	InitPolygon();
 }
 
-Diamond::Diamond(const Point &topLeft, const Point &bottomRight, Color color)
+Sh_Diamond::Sh_Diamond(const Point &topLeft, const Point &bottomRight, Color color)
 	: Shape(topLeft, bottomRight, ST_Diamond, color)
 {
 	InitPolygon();
 }
 
-Diamond::Diamond(const Diamond &other)
+Sh_Diamond::Sh_Diamond(const Sh_Diamond &other)
 	: Shape(other)
 {
 	InitPolygon();
 }
 
-const Diamond &Diamond::operator=(const Diamond &other)
+const Sh_Diamond &Sh_Diamond::operator=(const Sh_Diamond &other)
 {
 	if (&other != this)
 	{
@@ -45,17 +46,17 @@ const Diamond &Diamond::operator=(const Diamond &other)
 	return *this;
 }
 
-int Diamond::GetPolygonSize() const
+int Sh_Diamond::GetPolygonSize() const
 {
 	return DMND_SIZE;
 }
 
-Shape *Diamond::Clone() const
+Shape *Sh_Diamond::Clone() const
 {
-	return new Diamond(*this);
+	return new Sh_Diamond(*this);
 }
 
-Point *Diamond::CreatePolygon() const
+Point *Sh_Diamond::CreatePolygon() const
 {
 	Point *poly = new Point[DMND_SIZE];
 	Point topLeft = GetTopLeft();

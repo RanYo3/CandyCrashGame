@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "Shape.h"
 
 Shape::Shape(ShapeType type, Color color)
@@ -64,6 +65,11 @@ const Point &Shape::GetBottomRight() const
 const Color &Shape::GetColor() const
 {
 	return m_Color;
+}
+
+ShapeType Shape::GetType() const
+{
+	return m_Type;
 }
 
 void Shape::SetTopLeft(const Point &topLeft)

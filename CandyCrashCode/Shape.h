@@ -23,6 +23,7 @@ public:
 	const Point &GetTopLeft() const;
 	const Point &GetBottomRight() const;
 	const Color &GetColor() const;
+	ShapeType GetType() const;
 
 	void SetTopLeft(const Point &topLeft);
 	void SetBottomRight(const Point &bottomRight);

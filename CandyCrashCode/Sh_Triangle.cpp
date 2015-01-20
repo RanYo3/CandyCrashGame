@@ -1,40 +1,41 @@
-#include "Triangle.h"
+#include "stdafx.h"
+#include "Sh_Triangle.h"
 
-Triangle::Triangle()
+Sh_Triangle::Sh_Triangle()
 	: Shape(ST_Triangle)
 {
 	InitPolygon();
 }
 
-Triangle::~Triangle()
+Sh_Triangle::~Sh_Triangle()
 {
 }
 
-Triangle::Triangle(Color color)
+Sh_Triangle::Sh_Triangle(Color color)
 	: Shape(ST_Triangle, color)
 {
 	InitPolygon();
 }
 
-Triangle::Triangle(const Point &topLeft, const Point &bottomRight)
+Sh_Triangle::Sh_Triangle(const Point &topLeft, const Point &bottomRight)
 	: Shape(topLeft, bottomRight, ST_Triangle)
 {
 	InitPolygon();
 }
 
-Triangle::Triangle(const Point &topLeft, const Point &bottomRight, Color color)
+Sh_Triangle::Sh_Triangle(const Point &topLeft, const Point &bottomRight, Color color)
 	: Shape(topLeft, bottomRight, ST_Triangle, color)
 {
 	InitPolygon();
 }
 
-Triangle::Triangle(const Triangle &other)
+Sh_Triangle::Sh_Triangle(const Sh_Triangle &other)
 	: Shape(other)
 {
 	InitPolygon();
 }
 
-const Triangle &Triangle::operator=(const Triangle &other)
+const Sh_Triangle &Sh_Triangle::operator=(const Sh_Triangle &other)
 {
 	if (&other != this)
 	{
@@ -45,17 +46,17 @@ const Triangle &Triangle::operator=(const Triangle &other)
 	return *this;
 }
 
-int Triangle::GetPolygonSize() const
+int Sh_Triangle::GetPolygonSize() const
 {
 	return TRNG_SIZE;
 }
 
-Shape *Triangle::Clone() const
+Shape *Sh_Triangle::Clone() const
 {
-	return new Triangle(*this);
+	return new Sh_Triangle(*this);
 }
 
-Point *Triangle::CreatePolygon() const
+Point *Sh_Triangle::CreatePolygon() const
 {
 	Point *poly = new Point[TRNG_SIZE];
 	Point topLeft = GetTopLeft();

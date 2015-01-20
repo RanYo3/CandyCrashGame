@@ -1,13 +1,13 @@
 #include "Board.h"
 #include "Cell.h"
-#include "Ellipse.h"
-#include "Rectangle.h"
 #include "Shape.h"
+#include "Sh_Ellipse.h"
+#include "Sh_Rectangle.h"
+#include "Sh_Triangle.h"
+#include "Sh_Diamond.h"
 #include <assert.h>
 #include <iostream>
 #include <vector>
-#include "Triangle.h"
-#include "Diamond.h"
 
 using namespace std;
 
@@ -34,9 +34,9 @@ void main()
  
 
 	vector<Shape *> shapes;
-	shapes.push_back(&Rectangle());
-	shapes.push_back(&Rectangle());
-	shapes.push_back(&Rectangle(WHITE));
+	shapes.push_back(&Sh_Rectangle());
+	shapes.push_back(&Sh_Rectangle());
+	shapes.push_back(&Sh_Rectangle(WHITE));
 	TestShape(shapes);
 
 	cout << "Tests finished successfully!" << endl;
